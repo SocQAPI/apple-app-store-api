@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "platform": "apple-app-store",
+  "platformName": "Apple App Store",
+  "baseUrl": "https://api.socq.ai",
+  "creditUsd": 0.005,
+  "endpoints": [
+    {
+      "publicId": "apple-app-store/app-detail",
+      "name": "Apple App Store App Detail API",
+      "description": "Retrieve public Apple App Store listing details from known apps.apple.com URLs, returning normalized app identity, descriptive metadata, developer and category context, visible ratings, pricing, media, and collection time.",
+      "method": "POST",
+      "path": "/v1/apple-app-store/app-detail",
+      "payload": "payloads/app-detail.json",
+      "launchedAt": "2026-08-17",
+      "price": "0.15 credits ($0.00075) per result",
+      "billing": {
+        "baseCredits": 0,
+        "mode": "base_plus_result",
+        "resultUnitSize": 1,
+        "resultUnitCredits": 0.15,
+        "estimateResultCount": 1,
+        "estimateInputField": "urls",
+        "emptyResultPolicy": "base_only"
+      },
+      "docsUrl": "https://docs.socq.ai/api-manual/apple-app-store/app-detail",
+      "landingUrl": "https://socq.ai/apis/apple-app-store/app-detail",
+      "required": [
+        "urls"
+      ],
+      "requiredAnyOf": [],
+      "mutuallyExclusive": [],
+      "requestSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "description": "Public profile or content URLs."
+          }
+        },
+        "required": [
+          "urls"
+        ]
+      }
+    },
+    {
+      "publicId": "apple-app-store/app-reviews",
+      "name": "Apple App Store App Reviews API",
+      "description": "Collect public Apple App Store reviews from known apps.apple.com app URLs, returning normalized review text, ratings, reviewer details, timestamps, and app references.",
+      "method": "POST",
+      "path": "/v1/apple-app-store/app-reviews",
+      "payload": "payloads/app-reviews.json",
+      "launchedAt": "2026-08-17",
+      "price": "0.15 credits ($0.00075) per result",
+      "billing": {
+        "baseCredits": 0,
+        "mode": "base_plus_result",
+        "resultUnitSize": 1,
+        "resultUnitCredits": 0.15,
+        "estimateResultCount": 100,
+        "emptyResultPolicy": "base_only"
+      },
+      "docsUrl": "https://docs.socq.ai/api-manual/apple-app-store/app-reviews",
+      "landingUrl": "https://socq.ai/apis/apple-app-store/app-reviews",
+      "required": [
+        "urls"
+      ],
+      "requiredAnyOf": [],
+      "mutuallyExclusive": [],
+      "requestSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "results_limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2000,
+            "default": 100
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "description": "Public profile or content URLs."
+          }
+        },
+        "required": [
+          "urls"
+        ]
+      }
+    },
+    {
+      "publicId": "apple-app-store/rankings",
+      "name": "Apple App Store Rankings API",
+      "description": "Collect public Apple App Store category rankings from known apps.apple.com chart URLs, returning normalized rank, app identity, developer, category, rating, review, price, and media fields.",
+      "method": "POST",
+      "path": "/v1/apple-app-store/rankings",
+      "payload": "payloads/rankings.json",
+      "launchedAt": "2026-08-17",
+      "price": "0.15 credits ($0.00075) per result",
+      "billing": {
+        "baseCredits": 0,
+        "mode": "base_plus_result",
+        "resultUnitSize": 1,
+        "resultUnitCredits": 0.15,
+        "estimateResultCount": 100,
+        "emptyResultPolicy": "base_only"
+      },
+      "docsUrl": "https://docs.socq.ai/api-manual/apple-app-store/rankings",
+      "landingUrl": "https://socq.ai/apis/apple-app-store/rankings",
+      "required": [
+        "urls"
+      ],
+      "requiredAnyOf": [],
+      "mutuallyExclusive": [],
+      "requestSchema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "results_limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2000,
+            "default": 100
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1
+            },
+            "minItems": 1,
+            "description": "Public profile or content URLs."
+          }
+        },
+        "required": [
+          "urls"
+        ]
+      }
+    }
+  ]
+}

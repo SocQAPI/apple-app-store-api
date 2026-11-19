@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "templateVersion": "2.0.0",
+  "kind": "platform",
+  "platform": "apple-app-store",
+  "endpointCount": 3,
+  "endpoints": [
+    "apple-app-store/app-detail",
+    "apple-app-store/app-reviews",
+    "apple-app-store/rankings"
+  ],
+  "landingPage": "https://socq.ai/apis/apple-app-store",
+  "docsPage": "https://docs.socq.ai/api-manual/apple-app-store/overview",
+  "generatedFrom": "SocQAPI/socq-example-template"
+}
